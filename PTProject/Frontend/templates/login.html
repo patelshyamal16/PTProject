@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="svg-container">
+        <svg width="800" height="200" viewBox="0 0 800 200">
+            <!-- "Welcome to" Text -->
+            <text x="50%" y="30%" text-anchor="middle" class="welcome-text">
+                Welcome to
+                <animate attributeName="opacity" from="0" to="1" dur="2s" begin="0s; welcomeEnd.end+1s" fill="freeze" id="welcomeAnim" />
+                <animate attributeName="opacity" from="1" to="0" dur="1s" begin="welcomeAnim.end+1s" fill="freeze" id="welcomeEnd" />      
+            </text>
+
+            <!-- "Netflix" Text -->
+            <text x="50%" y="60%" text-anchor="middle" class="netflix-text">
+                NETFLIX
+                <animate attributeName="opacity" from="0" to="1" dur="2s" begin="welcomeEnd.end+1s" fill="freeze" id="netflixAnim" />
+                <animate attributeName="opacity" from="1" to="0" dur="1s" begin="netflixAnim.end+1s" fill="freeze" id="netflixEnd" />
+            </text>
+
+            <!-- "Collection!" Text -->
+            <text x="50%" y="90%" text-anchor="middle" class="collection-text">
+                Collection!
+                <animate attributeName="opacity" from="0" to="1" dur="2s" begin="netflixEnd.end+1s" fill="freeze" id="collectionAnim" />
+                <animate attributeName="opacity" from="1" to="0" dur="1s" begin="collectionAnim.end+1s" fill="freeze" id="collectionEnd" />
+            </text>
+
+        </svg>
+    </div>
+	<div class="box">
+        <form action="{{ url_for('login') }}" method="POST" autocomplete="off">
+            <h3>Sign in</h3>
+            <div class="inputBox">
+                <input type="email" name="email" required="required"> 
+                <span>Email</span> 
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a href="#"></a>
+                <a href="{{ url_for('register') }}">Sign up</a>
+            </div>
+            <input type="submit" value="Login"> 
+        </form>
+    </div>
+</body>
+</html>
