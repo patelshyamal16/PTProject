@@ -1,4 +1,4 @@
-# Pre-Progress Tracker (PPT) Capstone project
+# Pre-Progress Tracker (PPT) Capstone Project
 
 ## Developed by: Shyamal Patel  
 ## Course: Cognixia Future Horizon
